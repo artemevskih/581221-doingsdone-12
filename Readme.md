@@ -1,7 +1,7 @@
 # Личный проект «Дела в Порядке»
 
 * Студент: [Alexey Artemevskih](https://up.htmlacademy.ru/php/12/user/581221).
-* Наставник: `Неизвестно`.
+* Наставник: [Никита Колосов](https://htmlacademy.ru/profile/id1186205).
 
 ---
 
