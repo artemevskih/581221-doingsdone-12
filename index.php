@@ -82,10 +82,10 @@ $tasksList = [
 
                 <nav class="main-navigation">
                     <ul class="main-navigation__list">
-                        <? foreach ($categories as $val): ?>
+                        <? foreach ($categories as $category): ?>
 
                         <li class="main-navigation__list-item">
-                            <a class="main-navigation__list-item-link" href="#"><?=$val; ?></a>
+                            <a class="main-navigation__list-item-link" href="#"><?=$category; ?></a>
                             <span class="main-navigation__list-item-count">0</span>
                         </li>
 
@@ -122,18 +122,16 @@ $tasksList = [
                 </div>
 
                 <table class="tasks">
-                <?php foreach ($tasksList as $key => $value): ?>
-                    <?php if ($value['done'] && $show_complete_tasks === 0) {
+                <?php foreach ($tasksList as $taskItem): ?>
+                    <?php if ($taskItem['done'] && $show_complete_tasks === 0) {
                         continue;
                     } ?>
                     <tr class="tasks__item task <?php if ($value['done']): ?>task--completed<?php endif; ?>">
                         <td class="task__select">
                             <label class="checkbox task__checkbox">
-                                <input class="checkbox__input visually-hidden task__checkbox" type="checkbox" value="1" <?php if ($value['done']): ?>checked<?php endif; ?>>
+                                <input class="checkbox__input visually-hidden task__checkbox" type="checkbox" value="1" <?php if ($taskItem['done']): ?>checked<?php endif; ?>>
                                 <span class="checkbox__text">
-                                <?php if (isset($value['task'])): ?>
-                                    <?=$value['task']; ?>
-                                <?php endif; ?>
+                                  <?=$taskItem['task']; ?>
                                 </span>
                             </label>
                         </td>
@@ -143,9 +141,7 @@ $tasksList = [
                         </td>
 
                         <td class="task__date">
-                            <?php if (isset($value['date'])): ?>
-                                <?=$value['date']; ?>
-                            <?php endif; ?>
+                            <?=$taskItem['date']; ?>
                         </td>
                     </tr>
                 <? endforeach ?>
