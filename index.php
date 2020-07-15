@@ -41,7 +41,7 @@ $tasksList = [
   ]
 ];
 
-function counter(array $list, $task) {
+function getTasksNumber(array $list, string $task) {
   $count = 0;
 
   foreach ($list as $item) {
@@ -50,7 +50,7 @@ function counter(array $list, $task) {
     }
   }
 
-  return $count;
+  return (integer) $count;
 }
 
 ?>
@@ -98,7 +98,7 @@ function counter(array $list, $task) {
 
                         <li class="main-navigation__list-item">
                             <a class="main-navigation__list-item-link" href="#"><?=$category; ?></a>
-                            <span class="main-navigation__list-item-count"><?php print(counter($tasksList, $category)) ?></span>
+                            <span class="main-navigation__list-item-count"><?php print(getTasksNumber($tasksList, $category)) ?></span>
                         </li>
 
                         <? endforeach; ?>
