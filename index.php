@@ -41,6 +41,18 @@ $tasksList = [
   ]
 ];
 
+function counter(array $list, $task) {
+  $count = 0;
+
+  foreach ($list as $item) {
+    if ($item['category'] === $task) {
+      $count++;
+    }
+  }
+
+  return $count;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -86,7 +98,7 @@ $tasksList = [
 
                         <li class="main-navigation__list-item">
                             <a class="main-navigation__list-item-link" href="#"><?=$category; ?></a>
-                            <span class="main-navigation__list-item-count">0</span>
+                            <span class="main-navigation__list-item-count"><?php print(counter($tasksList, $category)) ?></span>
                         </li>
 
                         <? endforeach; ?>
