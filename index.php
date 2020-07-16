@@ -1,5 +1,6 @@
 <?php
 // показывать или нет выполненные задачи
+declare(strict_types=1);
 $show_complete_tasks = rand(0, 1);
 $categories = ["Входящие","Учеба", "Работа", "Домашние дела", "Авто"];
 $tasksList = [
@@ -41,7 +42,7 @@ $tasksList = [
   ]
 ];
 
-function getTasksNumber(array $list, string $task) {
+function getTasksNumber(array $list, string $task): int {
   $count = 0;
 
   foreach ($list as $item) {
@@ -50,7 +51,7 @@ function getTasksNumber(array $list, string $task) {
     }
   }
 
-  return (integer) $count;
+  return $count;
 }
 
 ?>
