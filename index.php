@@ -1,5 +1,6 @@
 <?php
 // показывать или нет выполненные задачи
+declare(strict_types=1);
 $show_complete_tasks = rand(0, 1);
 $categories = ["Входящие","Учеба", "Работа", "Домашние дела", "Авто"];
 $tasksList = [
@@ -40,6 +41,18 @@ $tasksList = [
     'done' => false
   ]
 ];
+
+function getTasksNumber(array $list, string $task): int {
+  $count = 0;
+
+  foreach ($list as $item) {
+    if ($item['category'] === $task) {
+      $count++;
+    }
+  }
+
+  return $count;
+}
 
 ?>
 <!DOCTYPE html>
@@ -86,7 +99,7 @@ $tasksList = [
 
                         <li class="main-navigation__list-item">
                             <a class="main-navigation__list-item-link" href="#"><?=$category; ?></a>
-                            <span class="main-navigation__list-item-count">0</span>
+                            <span class="main-navigation__list-item-count"><?php print(getTasksNumber($tasksList, $category)) ?></span>
                         </li>
 
                         <? endforeach; ?>
