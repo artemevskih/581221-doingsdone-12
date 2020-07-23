@@ -1,5 +1,5 @@
 <?php
-// показывать или нет выполненные задачи
+
 declare(strict_types=1);
 
 require_once('helpers.php');
