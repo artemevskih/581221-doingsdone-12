@@ -52,10 +52,8 @@
                       task
                       <?php if ($taskItem['done']): ?>
                         task--completed
-                      <?php endif; ?>
-                      <?php if (getTimeInterval($taskItem['date']) <= 24
-                        && $taskItem['date'] !== null
-                        && !$taskItem['done']): ?>
+                      <?php elseif ($taskItem['date'] !== null
+                        && getNumberOfRemainingHours($taskItem['date']) <= 24): ?>
                           task--important
                       <?php endif; ?>
             ">

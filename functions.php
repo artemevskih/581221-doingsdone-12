@@ -18,11 +18,8 @@ function esc($str) {
   return $text;
 }
 
-function getTimeInterval($date): int {
-  date_default_timezone_set('Europe/Moscow');
-  $secondsInHour = 3600;
-
-  return floor((strtotime($date) - time()) / $secondsInHour);
+function getNumberOfRemainingHours(string $date): int {
+  return floor((strtotime($date) - time()) / SECONDS_IN_HOUR);
 }
 
 ?>
