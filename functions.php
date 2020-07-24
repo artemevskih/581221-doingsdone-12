@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function getTasksNumber(array $list, string $task): int {
   $count = 0;
@@ -16,6 +16,10 @@ function esc($str) {
   $text = htmlspecialchars($str);
 
   return $text;
+}
+
+function getNumberOfRemainingHours(string $date): int {
+  return floor((strtotime($date) - time()) / SECONDS_IN_HOUR);
 }
 
 ?>

@@ -1,6 +1,8 @@
 <?php
-// показывать или нет выполненные задачи
+
 declare(strict_types=1);
+date_default_timezone_set('Europe/Moscow');
+define("SECONDS_IN_HOUR", 3600);
 
 require_once('helpers.php');
 require_once('data.php');
