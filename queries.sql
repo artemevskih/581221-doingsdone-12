@@ -24,7 +24,7 @@ SELECT name FROM tasks
   WHERE project_id = 3;
 
 UPDATE tasks SET status = 1
-  WHERE name = 'Собеседование в IT компании';
+  WHERE id = 1;
 
 UPDATE tasks SET name = 'Заказать большую пиццу'
   WHERE id = 6;
